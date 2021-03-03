@@ -6,33 +6,18 @@ let products = [
 ];
 
 function renderProducts(list) {
-    function renderProduct(title, price){
-        document.querySelector('.products').insertAdjacentHTML("beforeend", `<div class="product-item">
-                <h3>${title}</h3>
-                <p>${price}</p>
-                <button class="by-btn">Добавить в корзину</button>
-              </div>`);
-    }
-    
     list.forEach(item => {
         return renderProduct(item.title, item.price);
     });
 }
 
+function renderProduct(title, price){
+    document.querySelector('.products').insertAdjacentHTML("beforeend", `<div class="product-item">
+            <h3>${title}</h3>
+            <p>${price}</p>
+            <button class="by-btn">Добавить в корзину</button>
+          </div>`);
+}
 
 renderProducts(products);
 
-// const renderProducts = function(list) {
-//     const productList = list.forEach(item => {
-//         const renderProduct = (title, price) => {
-//             return `<div class="product-item">
-//                         <h3>${title}</h3>
-//                         <p>${price}</p>
-//                         <button class="by-btn">Добавить в корзину</button>
-//                     </div>`;
-//         }
-//         renderProduct(item.title, item.price);
-        
-//     });
-//     document.querySelector('.products').insertAdjacentHTML u = productList;
-// };
